@@ -101,7 +101,7 @@ const NavBar = () => {
         {/* Right Section */}
         <div className='hidden md:flex grow items-center justify-end'>
             <div className='flex items-center'>
-                <Link href='/'>
+                <Link href='/account'>
                     <button className='px-4 py-[6px] rounded-lg font-bold bg-teal-600 mr-2'>
                         Account
                     </button>
@@ -119,7 +119,11 @@ const NavBar = () => {
                 }
             </div>
         {/* The menu itself */}
-        <div className={nav ? 'fixed top-0 left-0 w-full h-screen bg-black flex justify-center items-center ease-in duration-300' : 'fixed top-[-100%] left-0 w-full h-screen bg-black flex justify-center items-center ease-in duration-300'}>
+        <div className={
+            nav 
+                ? 'md:hidden fixed top-0 left-0 w-full h-screen bg-black flex justify-center items-center ease-in duration-300' 
+                : 'md:hidden fixed top-[-100%] left-0 w-full h-screen bg-black flex justify-center items-center ease-in duration-300'
+            }>
             <ul className='text-center'>
                 <li className='p-4 text-3xl font-bold'>
                     <Link href='/'>Home</Link>
@@ -131,7 +135,7 @@ const NavBar = () => {
                     <Link href='/'>Categories</Link>
                 </li>
                 <li className='p-4 text-3xl font-bold'>
-                    <Link href='/'>My Account</Link>
+                    <Link href='/account'>My Account</Link>
                 </li>
             </ul>
         </div>
