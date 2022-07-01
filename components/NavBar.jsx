@@ -1,15 +1,22 @@
 import { Menu, Transition } from '@headlessui/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import Logo from '../public/assets/half-life.png'
-import { BsPerson, BsSearch, BsThreeDots, BsThreeDotsVertical } from 'react-icons/bs'
+import { BsPerson, BsSearch, BsThreeDots } from 'react-icons/bs'
+
+import { IoMenu, IoCloseSharp } from 'react-icons/io5'
 
 const classNames = (...classes) => {
     return classes.filter(Boolean).join(' ')
 }
 
 const NavBar = () => {
+    const [nav, setNav] = useState(false)
+
+    const handleNav = () => {
+        setNav(!nav)
+    }
   return (
     <div className='fixed h-14 w-full flex flex-nowrap items-center p-4 bg-zinc-800 mb-[2px] z-10'>
         {/* Left section */}
@@ -102,7 +109,32 @@ const NavBar = () => {
                 <BsPerson size={30} />
             </div>
         </div>
-
+        {/* Burger menu for mobile */}
+            <div onClick={handleNav} className='block md:hidden z-10 cursor-pointer'>
+                {
+                    nav 
+                    ? <IoCloseSharp size={25} />
+                    : <IoMenu size={25} />
+                     
+                }
+            </div>
+        {/* The menu itself */}
+        <div className={nav ? 'fixed top-0 left-0 w-full h-screen bg-black flex justify-center items-center ease-in duration-300' : 'fixed top-[-100%] left-0 w-full h-screen bg-black flex justify-center items-center ease-in duration-300'}>
+            <ul className='text-center'>
+                <li className='p-4 text-3xl font-bold'>
+                    <Link href='/'>Home</Link>
+                </li>
+                <li className='p-4 text-3xl font-bold'>
+                    <Link href='/'>Subscriptions</Link>
+                </li>
+                <li className='p-4 text-3xl font-bold'>
+                    <Link href='/'>Categories</Link>
+                </li>
+                <li className='p-4 text-3xl font-bold'>
+                    <Link href='/'>My Account</Link>
+                </li>
+            </ul>
+        </div>
     </div>
   )
 }
