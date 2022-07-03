@@ -4,8 +4,8 @@ import Link from 'next/link'
 import React, { Fragment, useState } from 'react'
 import Logo from '../public/assets/half-life.png'
 import { BsPerson, BsSearch, BsThreeDots } from 'react-icons/bs'
-
 import { IoMenu, IoCloseSharp } from 'react-icons/io5'
+import { useSession, signIn, signOut } from "next-auth/react"
 
 const classNames = (...classes) => {
     return classes.filter(Boolean).join(' ')
@@ -17,6 +17,9 @@ const NavBar = () => {
     const handleNav = () => {
         setNav(!nav)
     }
+
+    const {data: session} = useState(false)
+    console.log(session)
   return (
     <div className='fixed h-14 w-full flex flex-nowrap items-center p-4 bg-zinc-800 mb-[2px] z-10'>
         {/* Left section */}
@@ -99,7 +102,17 @@ const NavBar = () => {
             </div>
         </div>
         {/* Right Section */}
-        <div className='hidden md:flex grow items-center justify-end'>
+        {session 
+            ? <div className='flex items-center'>
+                <Link href='/account'/>
+                    <div>
+                        <p className='pr-4 cursor-pointer'>
+                            Welcome, {session.user.name}
+                        </p>
+                    </div>
+
+            </div> 
+            :<div className='hidden md:flex grow items-center justify-end'>
             <div className='flex items-center'>
                 <Link href='/account'>
                     <button className='px-4 py-[6px] rounded-lg font-bold bg-teal-600 mr-2'>
@@ -108,7 +121,7 @@ const NavBar = () => {
                 </Link>
                 <BsPerson size={30} />
             </div>
-        </div>
+        </div>}
         {/* Burger menu for mobile */}
             <div onClick={handleNav} className='block md:hidden z-10 cursor-pointer'>
                 {
