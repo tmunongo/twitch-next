@@ -1,0 +1,56 @@
+export const channels = [
+    {
+        "id":1,
+        "avatar":"https://robohash.org/temporibussuntnisi.png?size=50x50&set=set1",
+        "username":"mgluyas0",
+        "game_name":"Voyatouch",
+        "rank":26
+    },
+    {
+        "id":2,"avatar":"https://robohash.org/fugiatarchitectosit.png?size=50x50&set=set1","username":"rskerritt1",
+        "game_name":"Stringtough",
+        "rank":90
+    },
+    {
+        "id":3,
+        "avatar":"https://robohash.org/perspiciatisquasenim.png?size=50x50&set=set1",
+        "username":"wpaxforde2",
+        "game_name":"Treeflex","rank":69
+    },
+    {
+        "id":4,"avatar":"https://robohash.org/quisestea.png?size=50x50&set=set1","username":"cbailess3","game_name":"Flowdesk","rank":81
+    },
+    {
+        "id":5,"avatar":"https://robohash.org/voluptasnonet.png?size=50x50&set=set1","username":"bsmullen4","game_name":"Transcof","rank":34
+    },
+    {
+        "id":6,"avatar":"https://robohash.org/sequienima.png?size=50x50&set=set1","username":"rheinonen5","game_name":"Vagram","rank":17
+    },
+    {"id":7,"avatar":"https://robohash.org/autnobistemporibus.png?size=50x50&set=set1","username":"mgoghin6","game_name":"Tampflex","rank":55},
+    {"id":8,"avatar":"https://robohash.org/verosapienteaut.png?size=50x50&set=set1","username":"tovendon7","game_name":"Stronghold","rank":18},
+    {"id":9,"avatar":"https://robohash.org/deseruntillomagnam.png?size=50x50&set=set1","username":"jhayles8","game_name":"Ronstring","rank":3},
+    {"id":10,"avatar":"https://robohash.org/odionesciuntdoloremque.png?size=50x50&set=set1","username":"tspackman9","game_name":"Vagram","rank":85}
+]
+
+export const top_channels = [
+    {
+        "id":5,"avatar":"https://robohash.org/voluptasnonet.png?size=50x50&set=set1","username":"bsmullen4","game_name":"Transcof","rank":34
+    },
+    {
+        "id":6,"avatar":"https://robohash.org/sequienima.png?size=50x50&set=set1","username":"rheinonen5","game_name":"Vagram","rank":17
+    },
+    {
+        "id":8,
+        "avatar":"https://robohash.org/verosapienteaut.png?size=50x50&set=set1",
+        "username":"tovendon7",
+        "game_name":"Stronghold",
+        "rank":18
+    },
+    {
+        "id":9,
+        "avatar":"https://robohash.org/deseruntillomagnam.png?size=50x50&set=set1",
+        "username":"jhayles8",
+        "game_name":"Ronstring",
+        "rank":3
+    },
+]

@@ -18,8 +18,8 @@ const NavBar = () => {
         setNav(!nav)
     }
 
-    const {data: session} = useState(false)
-    console.log(session)
+    const {data: session} = useSession()
+    // console.log(session)
   return (
     <div className='fixed h-14 w-full flex flex-nowrap items-center p-4 bg-zinc-800 mb-[2px] z-10'>
         {/* Left section */}
@@ -102,26 +102,80 @@ const NavBar = () => {
             </div>
         </div>
         {/* Right Section */}
-        {session 
-            ? <div className='flex items-center'>
-                <Link href='/account'/>
+        <div className='hidden md:flex grow items-center justify-end'>
+
+        {session ? (
+            <div className='flex items-center'>
+                <Link href='/account'>
                     <div>
                         <p className='pr-4 cursor-pointer'>
                             Welcome, {session.user.name}
                         </p>
                     </div>
-
-            </div> 
-            :<div className='hidden md:flex grow items-center justify-end'>
-            <div className='flex items-center'>
-                <Link href='/account'>
-                    <button className='px-4 py-[6px] rounded-lg font-bold bg-teal-600 mr-2'>
-                        Account
-                    </button>
                 </Link>
-                <BsPerson size={30} />
+                <Menu as='div' className='relative text-left'>
+                <div className='flex'>
+                    <Menu.Button>
+                        <Image src={session.user.image} width='45' height='45' className='rounded-3xl' alt='profile picture' />
+                    </Menu.Button>
+                </div>
+                <Transition
+                    as={Fragment}
+                    enter='transition ease-out duration-100'
+                    enterFrom='transform opacity-0 scale-95'
+                    enterTo='transform opacity-100 scale-100'
+                    leave='transition ease-in duration-75'
+                    leaveFrom='transform opacity-100 scale-95'
+                >
+                    <Menu.Items className='origin-top-right absolute right-0 mt-2 w-60 rounded-md shadow-lg bg-black ring-1 ring-white ring-opacity-5 focus:outline-none' >
+                        <div className='py-1'>
+                            <Menu.Item>
+                                {({ active }) => (
+                                    <div className={classNames(
+                                        active
+                                        ? 'bg-gray-500 text-gray-100'
+                                            : 'text-gray-200',
+                                            'block px-4 py-2 text-sm'
+                                    )}>
+                                        <Link
+                                            
+                                            href="/account"
+                                            >
+                                                Account
+                                        </Link>
+                                    </div>
+                                )}
+                            </Menu.Item>
+                            <Menu.Item>
+                                {({ active }) => (
+                                    <p
+                                    className={classNames(
+                                        active
+                                            ? 'cursor-grab bg-gray-500 text-gray-100'
+                                            : 'text-gray-200',
+                                            'block px-4 py-2 text-sm'
+                                    )}
+                                    onClick={() => signOut()}
+                                    >
+                                    Logout
+                                    </p>
+                                )}
+                            </Menu.Item>
+                        </div>
+                    </Menu.Items>
+                </Transition>
+                </Menu>
             </div>
-        </div>}
+            ) : (<div className='hidden md:flex grow items-center justify-end'>
+                <div className='flex items-center'>
+                    <Link href='/account'>
+                        <button className='px-4 py-[6px] rounded-lg font-bold bg-teal-600 mr-2'>
+                            Account
+                        </button>
+                    </Link>
+                    <BsPerson size={30} />
+                </div>
+            </div>)}
         {/* Burger menu for mobile */}
             <div onClick={handleNav} className='block md:hidden z-10 cursor-pointer'>
                 {
@@ -131,6 +185,7 @@ const NavBar = () => {
                      
                 }
             </div>
+        </div>
         {/* The menu itself */}
         <div className={
             nav 

@@ -6,6 +6,17 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    screens: {
+      //media query screen size breakpoints
+      sm: '640px',
+      md: '768px',
+      lg: '1028px',
+      xl: '1280px',
+      // media (min-width: 1600px)
+      '2xl': '1600px',
+      // media (min-width: 1600px)
+      '3xl': '1800px'
+    }
   },
   plugins: [],
 }

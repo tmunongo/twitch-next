@@ -1,8 +1,11 @@
 # Intro
-Building a Twitch-like live streaming platform using NextJS with TailWind CSS for styling.
+Building the Twitch user interface using NextJS and Tailwind CSS.
 
 ## Details
-The navigation bar menu is implemented using headless-ui.
+- The navigation bar menu is implemented using headless-ui.
+- Google and Github authentication done using NextAuth
+- Fully responsive
+- Next Image component for lazily loading images
 
 ## How to use
 
