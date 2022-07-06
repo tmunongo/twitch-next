@@ -197,10 +197,10 @@ const NavBar = () => {
                     <Link href='/'>Home</Link>
                 </li>
                 <li onClick={(() => setNav(false))} className='p-4 text-3xl font-bold'>
-                    <Link href='/'>Subscriptions</Link>
+                    <Link href='/#live'>Live</Link>
                 </li>
                 <li onClick={(() => setNav(false))} className='p-4 text-3xl font-bold'>
-                    <Link href='/'>Categories</Link>
+                    <Link href='/#categories'>Categories</Link>
                 </li>
                 <li onClick={(() => setNav(false))} className='p-4 text-3xl font-bold'>
                     <Link href='/account'>My Account</Link>

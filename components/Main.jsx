@@ -1,5 +1,6 @@
 import React from 'react'
 import Banner from './Banner'
+import Categories from './Categories'
 import IconBar from './IconBar'
 import LiveChannels from './LiveChannels'
 
@@ -9,6 +10,7 @@ const Main = () => {
       <Banner />
       <LiveChannels />
       <IconBar />
+      <Categories />
     </div>
   )
 }
