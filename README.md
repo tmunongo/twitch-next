@@ -3,7 +3,7 @@ Building the Twitch user interface using NextJS and Tailwind CSS.
 
 ## Preview
 
-[!'homepage'](home_page.png)
+!['homepage'](home_page.png)
 
 ## .env variables
 
