@@ -1,6 +1,19 @@
 # Intro
 Building the Twitch user interface using NextJS and Tailwind CSS.
 
+## Preview
+
+[!'homepage'](home_page.png)
+
+## .env variables
+
+GITHUB_ID
+GITHUB_SECRET
+GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_SECRET
+NEXTAUTH_URL
+JWT_SECRET
+
 ## Details
 - The navigation bar menu is implemented using headless-ui.
 - Google and Github authentication done using NextAuth
