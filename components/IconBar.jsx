@@ -18,12 +18,12 @@ const IconBar = () => {
             </div>
             {/* IRL button */}
             <div className='flex w-full h-[50px] bg-purple-400 justify-between items-center px-4 rounded'>
-                <p className='text-2xl font-bold'>Games</p>
+                <p className='text-2xl font-bold'>IRL</p>
                 <Image src={Mic} alt='remote' />
             </div>
             {/* Music button */}
             <div className='flex w-full h-[50px] bg-purple-400 justify-between items-center px-4 rounded'>
-                <p className='text-2xl font-bold'>Games</p>
+                <p className='text-2xl font-bold'>Music</p>
                 <Image src={HeadPhones} alt='remote' />
             </div>
             {/* esports button */}
